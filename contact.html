@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact – Adam Jaskuloski</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Roboto&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>Adam Jaskuloski</h1>
+      <nav id="nav">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="books.html">Books</a>
+        <a href="contact.html">Contact</a>
+        <button id="menu-toggle">☰</button>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="contact-section">
+      <h2>Contact Me</h2>
+      <p style="text-align:center; margin-bottom: 18px; font-size:1.1em; color:#6ec6ff;">
+        Email me at: <a href="mailto:adam.jaskuloski@gmail.com">adam.jaskuloski@gmail.com</a>
+      </p>
+      <div id="contact-form">
+        <span class="separator"></span>
+        <p style="text-align:center; margin-bottom: 18px; font-size:1.1em; color:#f4f4f4;">Or fill out this form:</p>
+        <form action="https://formspree.io/f/xgvzqrbe" method="POST">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required>
+
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required>
+
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="6" required></textarea>
+
+          <button type="submit">Send</button>
+        </form>
+      </div>
+      <div id="form-success" style="display:none; text-align:center; font-size:1.2em; color:#ffe9a3; margin-top:32px; transition:opacity 0.5s;">
+        Thank you. Your form has been submitted.
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Adam Jaskuloski. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

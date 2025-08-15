@@ -1,0 +1,611 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.7;
+  color: #f4f4f4;
+  background: url('images/parchment-bg.jpg') no-repeat center top;
+  background-size: cover;
+}
+
+/* Container */
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header */
+header {
+  background: rgba(32, 24, 16, 0.92); /* softer fantasy parchment */
+  color: #f4f4f4;
+  padding: 14px 0; /* thicker header */
+  border-bottom: 2px solid #bfa055;
+  box-shadow: 0 2px 12px 0 #bfa05522;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+header h1 {
+  display: none;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  background: none;
+  box-shadow: none;
+  padding: 0;
+  margin: 0;
+}
+
+nav a {
+  color: #f4f4f4;
+  text-decoration: none;
+  margin-left: 24px;
+  position: relative;
+  font-size: 1.1em;
+  text-shadow: 0 0 4px #bfa05544, 0 0 1px #000;
+  padding-bottom: 2px;
+  transition: color 0.3s, text-shadow 0.3s, box-shadow 0.3s;
+  font-family: 'Cinzel', serif;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+
+nav a:hover {
+  color: #ffe9a3;
+  text-shadow: 0 0 8px #bfa05588, 0 0 2px #000;
+}
+
+nav a::after {
+  content: "";
+  display: block;
+  height: 2px;
+  width: 0;
+  background: linear-gradient(90deg, #bfa055 0%, #ffe9a3 100%);
+  border-radius: 2px;
+  transition: width 0.3s;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+nav button {
+  display: none;
+  font-size: 1.3em;
+  background: linear-gradient(90deg, #bfa055 0%, #3a2b1f 100%);
+  color: #fffbe6;
+  border: 2px solid #bfa055;
+  border-radius: 8px;
+  box-shadow: 0 0 6px 1px #bfa05544;
+  padding: 4px 12px;
+  cursor: pointer;
+  transition: box-shadow 0.3s, background 0.3s;
+}
+
+nav button:hover {
+  background: #ffe9a3;
+  color: #3a2b1f;
+  box-shadow: 0 0 12px 2px #bfa05588;
+}
+
+/* Landing Header */
+#landing-header {
+  background-image: url('images/vision-asteria/Continent-of-Ralador.png');
+  background-size: 125%;
+  background-position: center 25%;
+  padding: 200px 20px;
+  text-align: center;
+  border-bottom: 3px solid #bfa055;
+  position: relative;
+}
+
+#landing-header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+  background: radial-gradient(ellipse at center, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.6) 100%);
+}
+
+#landing-header > * {
+  position: relative;
+  z-index: 2;
+}
+
+#landing-header h2 {
+  font-family: 'Cinzel', serif;
+  font-size: 2.5em;
+  padding: 0.5rem;
+  margin: 0.5rem;
+  line-height: 1em;
+  text-shadow: 1px 1px 4px #000;
+}
+
+#landing-header h3 {
+  font-family: 'Cinzel', serif;
+  font-size: 1.25em;
+  padding: 0.5rem;
+  margin: 0.5rem;
+  line-height: 1em;
+  text-shadow: 2px 2px 4px #000;
+  color: #d6c190;
+}
+  
+#landing-header p {
+  font-size: 1.2em;
+  margin-bottom: 25px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#featured-book {
+  background: rgba(40, 30, 20, 0.85);
+  padding: 20px;
+  border: 1px solid #bfa055;
+  border-radius: 5px;
+  margin-top: 30px;
+}
+
+.btn {
+  display: inline-block;
+  background: #3a2b1f;
+  color: #f4f4f4;
+  padding: 12px 25px;
+  text-decoration: none;
+  border: 2px solid #bfa055;
+  transition: all 0.3s ease;
+  font-family: 'Cinzel', serif;
+}
+
+.btn:hover {
+  background: #bfa055;
+  color: #1b1b1b;
+  border-color: #f4f4f4;
+}
+
+/* Sections */
+section h2, section h3 {
+  font-family: 'Cinzel', serif;
+  color: #bfa055;
+  margin-bottom: 15px;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.6);
+}
+
+section p {
+  color: #e0e0e0;
+}
+
+/* Book List */
+
+.book-list {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  margin-top: 30px;
+  padding: 10px;
+}
+
+.book {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background: rgba(40, 30, 20, 0.85); /* warm dark parchment */
+  padding: 20px;
+  border: 1px solid #bfa055;
+  border-radius: 5px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.book:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 20px rgba(191, 160, 85, 0.6);
+}
+
+/* Books - Reverse layout */
+.book.book-reverse {
+  flex-direction: row-reverse;
+}
+
+.book img {
+  max-width: 200px;
+  margin-right: 30px;
+  border: 1px solid #bfa055;
+  border-radius: 3px;
+}
+
+.book.book-reverse img {
+  margin-right: 0;
+  margin-left: 30px;
+}
+
+.book-info h3 {
+  font-family: 'Cinzel', serif;
+  color: #bfa055;
+  margin-bottom: 10px;
+}
+
+.book-info p {
+  color: #e0e0e0;
+  margin-bottom: 10px;
+}
+
+.book-info .btn {
+  display: inline-block;
+  margin-top: 5px;
+}
+
+/* Author Bio */
+.bio {
+  background: rgba(32, 24, 16, 0.92);
+  border-radius: 16px;
+  box-shadow: 0 2px 16px 0 #bfa05522;
+  padding: 32px 28px;
+  max-width: 95vw;
+  margin: 40px auto;
+  text-align: left;
+  position: relative;
+  overflow: hidden;
+}
+
+.bio img {
+  width: 220px;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid #bfa055;
+  margin: 0 0 18px 32px;
+  box-shadow: 0 2px 12px 0 #bfa05544;
+  float: right;
+  shape-outside: circle(50%);
+}
+
+.bio h2 {
+  font-size: 2em;
+  color: #ffe9a3;
+  margin-bottom: 18px;
+  text-shadow: 1px 1px 6px #000;
+  text-align: center;
+  clear: both;
+}
+
+.separator {
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, #bfa055 0%, #ffe9a3 100%);
+  border-radius: 2px;
+  margin: 32px auto;
+  display: block;
+}
+
+.bio .separator {
+  margin: 0 auto 32px auto;
+}
+
+@media (max-width: 700px) {
+  .separator {
+    margin-bottom: 18px;
+  }
+}
+
+.bio p {
+  color: #f4f4f4;
+  font-size: 1.15em;
+  line-height: 1.8;
+  margin-bottom: 18px;
+  background: none;
+  max-width: 100%;
+}
+
+.bio p:not(:first-of-type) {
+  text-indent: 2em;
+}
+
+@media (max-width: 700px) {
+  .bio img {
+    float: none;
+    display: block;
+    margin: 0 auto 18px auto;
+    width: 140px;
+    height: 140px;
+  }
+  .bio {
+    text-align: center;
+    padding: 24px 8px;
+  }
+  .separator {
+    margin-bottom: 18px;
+  }
+}
+
+/* Books - Mobile responsiveness */
+@media (max-width: 768px) {
+  .book, .book.book-reverse {
+    flex-direction: column;
+    text-align: center;
+  }
+  .book img, .book.book-reverse img {
+    margin: 0 0 15px 0;
+  }
+  nav {
+    justify-content: flex-start;
+  }
+}
+
+/* Contact Form */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 500px;
+  margin: 20px auto;
+}
+
+input, textarea {
+  padding: 10px;
+  border: 1px solid #bfa055;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.1);
+  color: #f4f4f4;
+  font-family: 'Roboto', sans-serif;
+}
+
+button[type="submit"] {
+  padding: 12px;
+  border: 2px solid #bfa055;
+  background: #3a2b1f;
+  color: #f4f4f4;
+  font-family: 'Cinzel', serif;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  background: #bfa055;
+  color: #1b1b1b;
+}
+
+/* Contact Section */
+.contact-section {
+  background: rgba(32, 24, 16, 0.92);
+  border-radius: 16px;
+  box-shadow: 0 2px 16px 0 #bfa05522;
+  padding: 40px 28px;
+  max-width: 600px;
+  margin: 40px auto;
+}
+
+.contact-section h2 {
+  text-align: center;
+  color: #ffe9a3;
+  font-family: 'Cinzel', serif;
+  margin-bottom: 24px;
+  text-shadow: 1px 1px 6px #000;
+}
+
+.contact-section form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.contact-section input,
+.contact-section textarea {
+  padding: 12px;
+  border: 1px solid #bfa055;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.12);
+  color: #f4f4f4;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1em;
+}
+
+.contact-section button[type="submit"] {
+  padding: 14px;
+  border: 2px solid #bfa055;
+  background: #3a2b1f;
+  color: #f4f4f4;
+  font-family: 'Cinzel', serif;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 1.1em;
+  border-radius: 6px;
+}
+
+.contact-section button[type="submit"]:hover {
+  background: #bfa055;
+  color: #1b1b1b;
+}
+
+.contact-section a[href^="mailto:"] {
+  color: #6ec6ff;
+  text-decoration: underline;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.contact-section a[href^="mailto:"]:hover {
+  color: #b3e5fc;
+}
+
+/* Footer */
+footer {
+  background: rgba(20, 20, 30, 0.9);
+  color: #f4f4f4;
+  text-align: center;
+  padding: 25px 0;
+  border-top: 2px solid #bfa055;
+  margin-top: 40px;
+}
+
+/* Responsive Nav */
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    padding: 0;
+  }
+  nav a { display: none; }
+  nav button { display: inline-block; }
+  nav.show a { display: block; margin: 10px 0; }
+}
+
+@media (max-width: 1000px) {
+  .bio {
+    max-width: 98vw;
+    padding: 32px 10vw;
+  }
+}
+
+/* Books Header with image background and vignette */
+.books-header {
+  background-image: url('images/vision-asteria/Academy-in-the-Sky.png');
+  background-size: cover;
+  background-position: center 30%;
+  position: relative;
+  border-radius: 16px;
+  box-shadow: 0 2px 16px 0 #bfa05522;
+  padding: 60px 28px 40px 28px;
+  max-width: 900px;
+  margin: 40px auto 0 auto;
+  text-align: center;
+  overflow: hidden;
+}
+
+.books-header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 16px;
+  background: radial-gradient(ellipse at center, rgba(32,24,16,0.25) 0%, rgba(32,24,16,0.55) 100%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.books-header > * {
+  position: relative;
+  z-index: 2;
+}
+
+.books-header-images {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 32px;
+  margin-bottom: 32px;
+  position: relative;
+  z-index: 2;
+}
+.books-header-img {
+  width: 32%;
+  min-width: 120px;
+  max-width: 220px;
+  height: 240px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2), 0 0 0 3px #bfa055;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #222;
+}
+#books-header-mini-1 {
+  background-image: url('images/vision-asteria/Aaron-Aevum-1.png');
+}
+#books-header-mini-2 {
+  background-image: url('images/vision-asteria/Sylvia-Aevum-1.png');
+}
+#books-header-mini-3 {
+  background-image: url('images/vision-asteria/Gallus-Exoren-1.png');
+}
+@media (max-width: 900px) {
+  .books-header-img {
+    width: 28vw;
+    height: 38vw;
+    min-width: 120px;
+    min-height: 160px;
+    max-width: 180px;
+    max-height: 240px;
+  }
+  .books-header-images {
+    gap: 16px;
+  }
+}
+@media (max-width: 600px) {
+  .books-header-images {
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+  }
+  .books-header-img {
+    width: 70vw;
+    height: 40vw;
+    max-width: 220px;
+    max-height: 140px;
+  }
+}
+
+/* Mini Book Covers in Header */
+.books-header-mini {
+  width: 220px;
+  height: 220px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2), 0 0 0 2px #bfa055;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #222;
+  margin: 0 10px;
+  transition: box-shadow 0.2s;
+  border: 1px solid #bfa055;
+}
+.books-header-mini:hover {
+  box-shadow: 0 8px 24px rgba(0,0,0,0.35), 0 0 0 2px #ffe9a3;
+}
+
+.books-list-separator {
+  width: 120px;
+  height: 6px;
+  background: linear-gradient(90deg, #2a1a0a 0%, #55555f 50%, #22232a 100%);
+  border-radius: 3px;
+  margin: 24px auto 12px auto;
+  box-shadow: 0 2px 12px 0 #22232a88;
+  display: block;
+}
+.books-list-title {
+  font-size: 2em;
+  color: #ffe9a3;
+  text-shadow: 2px 2px 8px #2a1a0a, 0 0 2px #000;
+  margin-bottom: 0;
+  font-family: 'Cinzel', serif;
+  letter-spacing: 1px;
+  text-align: center;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
